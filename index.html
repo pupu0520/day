@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="base/react.min.js"></script>
+		<script src="base/react-dom.min.js"></script>
+		<script src="base/browser.min.js"></script>
+	</head>
+	<body>
+		<div id="box">
+		
+		</div>
+	</body>
+	<script type="text/babel">
+		
+		var Hello=React.createClass({
+			render:function(){
+				return (
+					<div>
+						<button>hello word</button>
+					</div>
+				)
+			}
+		})
+		
+		var buttonBox=document.getElementById("box")
+		ReactDOM.render(<Hello/>,buttonBox)
+		
+		
+		
+		
+		
+		
+		
+	</script>
+</html>

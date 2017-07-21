@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+		*{margin:0;padding:0;}
+			.header{height:auto;width:1000px;border:1px solid #0055BB;margin:0 auto;border-radius:5px;margin-top:30px;}
+			.top{height:50px;width:1000px;background:#0055BB;}
+			.top h3{padding-left:50px;padding-top:10px;color:#fff;letter-spacing: 3px;}
+			
+			.box{padding:50px 50px;}
+			.list{position:relative;overflow:hidden;height:150px;margin-bottom:40px;}
+			.list-image{float:left;height:100px;width:100px;margin-top:25px;}
+			.list-image img{width:100%;height:100%;}
+			.list-xi{float:left;padding-left:40px;width:620px}
+			.btn{position:absolute;left:800px;top:50px;height:30px;width:70px;
+			background:#0055BB;color:#FFF;}
+			.footer{margin-bottom:50px;overflow:hidden;}
+			.shu{height:60px;width:700px;margin-left:100px;float:left;}
+			.btn-in{background:#0055BB;height:30px;width:50px;margin-left:20px;color:#fff;float:left;margin-top:16px;}
+		</style>
+		<script src="base/react.min.js"></script>
+		<script src="base/react-dom.min.js"></script>
+		<script src="base/browser.min.js"></script>
+	</head>
+	<body>
+		<div class="header">
+			<div class="top">
+				<h3>中超俱乐部</h3>
+			</div>
+			<div class="section" id="section">
+				
+			
+			</div>
+			<div class="footer">
+				
+				<textarea name="" rows="" cols="" class="shu"></textarea>
+				<button class="btn-in">发布</button>
+			</div>
+		</div>
+		
+		
+	</body>
+	<script type="text/babel">
+		
+		
+	var Boxcome=React.createClass({
+		
+		render:function(){
+			console.log(this.props)
+			return (
+			<div className="box" id="box">
+			
+					<Listcomt names={this.props.info[0].name} zi={this.props.info[0].ziliao} image={
+						this.props.info[0].img}  han={this.props.info[0].show}/>
+					<Listcomt names={this.props.info[1].name} zi={this.props.info[1].ziliao} image={
+						this.props.info[1].img} han={this.props.info[1].show}/>
+					<Listcomt names={this.props.info[2].name} zi={this.props.info[2].ziliao} image={
+						this.props.info[2].img} han={this.props.info[2].show}/>
+				</div>
+			)
+		}
+	})
+	
+	var Listcomt=React.createClass({
+		
+		render:function(){
+			console.log(this.props)
+			return (
+			
+				<div className="list">
+						<div className="list-image">
+							<img src={this.props.image} alt="" />
+						</div>
+						<div className="list-xi">
+							<h4>{this.props.names}俱乐部简介：</h4>
+							<p>
+								{this.props.zi} 
+							</p>
+							
+						</div>
+						<button className="btn" onClick={this.props.han}>详细信息</button>
+					</div>
+			)
+		}
+	})
+	
+	var info=[{
+		name:"辽宁宏运",
+		ziliao:"辽宁宏运足球俱乐部成立于1995年12月，是在原辽宁足球队的基础上，经辽宁省体改委批准正式成立的，成立时名为辽宁足球俱乐部股份有限公司，之后，辽足俱乐部股权几次易手，直到2006年8月，宏运集团注资辽足俱乐部，正式更名为辽宁宏运足球俱乐部。",
+		img:"img/1.jpg",
+		show:function(){
+			console.log(123)
+		}
+	},
+	{
+		name:"山东鲁能",
+		ziliao:"山东鲁能泰山足球俱乐部是在原山东队的基础上建立起来的。山东队最早成立于1956年。1957年参加全国足球乙级队联赛，1977晋升甲级。1979年夺得第四届全运会冠军，1989年不幸降落B组，次年再降至乙级。1991年打回B组，1994打回了甲A。1994年中国足球联赛实行了职业化，山东队成为中国职业足球甲A联赛创始球队之一。1993年12月2日，经过职业化改组正式成立济南泰山将军足球队，1998年1月5日正式更名为山东鲁能泰山队。",
+		img:"img/2.jpg"	,
+		show:function(){
+			console.log(456)
+		}
+	},
+	{
+		name:"广州恒大",
+		ziliao:"广州恒大淘宝足球俱乐部前身是成立于1977年的广州市足球运动队。1993年，广州足球队通过和太阳神集团合作，成为职业足球俱乐部。2010年3月1日，恒大集团买断球队全部股权，俱乐部更名为广州恒大足球俱乐部。2013年获得亚洲足球俱乐部冠军联赛冠军，这也是中国俱乐部第一次问鼎该项赛事的冠军，至2016年2月，广州恒大淘宝足球俱乐部已连续五次获得中超联赛冠军，也是中超联赛中夺冠次数最多的球队；并获得两次中国足球超级杯冠军和一次中国足协杯冠军；两次亚冠联赛冠军。",
+		img:"img/4.jpg"	,
+		show:function(){
+			console.log(789)
+		}
+	}
+	]
+	
+	
+	ReactDOM.render(<Boxcome info={info}/>,document.getElementById("section"))
+	</script>
+</html>
